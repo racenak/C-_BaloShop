@@ -35,13 +35,25 @@ namespace DangNhap
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            string username = tkBox.Text;
+            if (string.IsNullOrEmpty(tkBox.Text))
+            {
+                LoginCheck.SetError(tkBox, "Tài khoản không được để trống");
+                tkBox.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(mkBox.Text))
+            {
+                LoginCheck.SetError(mkBox, "Mật khẩu không được để trống");
+                mkBox.Focus();
+                return;
+            }
+                string username = tkBox.Text;
             string password = mkBox.Text;
 
             if (bus.Login(username, password))
             {
-                label3.Text = "Đăng nhập thành công";
-                label3.ForeColor = Color.Green;
+                //label3.Text = "Đăng nhập thành công";
+                //label3.ForeColor = Color.Green;
                 this.Hide();
                 Form1 homepage = new Form1(username);
                 homepage.ShowDialog();
@@ -50,8 +62,9 @@ namespace DangNhap
             }
             else
             {
-                label3.Text = "Đăng nhập thất bại";
-                label3.ForeColor = Color.Red;
+                //label3.Text = "Đăng nhập thất bại";
+                //label3.ForeColor = Color.Red;
+                LoginCheck.SetError(tkBox, "Tài khoản hoặc mật khẩu không chính xác");
             }
         }
 

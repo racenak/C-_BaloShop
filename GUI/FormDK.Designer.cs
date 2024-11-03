@@ -30,6 +30,8 @@ namespace WinformForProject
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lnBox = new System.Windows.Forms.TextBox();
+            this.lastNameLabel = new System.Windows.Forms.Label();
             this.dnLink = new System.Windows.Forms.LinkLabel();
             this.mkBox = new System.Windows.Forms.TextBox();
             this.dkButton = new System.Windows.Forms.Button();
@@ -42,6 +44,8 @@ namespace WinformForProject
             // groupBox1
             // 
             this.groupBox1.BackgroundImage = global::WinformForProject.Properties.Resources.ehman1;
+            this.groupBox1.Controls.Add(this.lnBox);
+            this.groupBox1.Controls.Add(this.lastNameLabel);
             this.groupBox1.Controls.Add(this.dnLink);
             this.groupBox1.Controls.Add(this.mkBox);
             this.groupBox1.Controls.Add(this.dkButton);
@@ -55,6 +59,24 @@ namespace WinformForProject
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đăng ký";
+            // 
+            // lnBox
+            // 
+            this.lnBox.Location = new System.Drawing.Point(199, 129);
+            this.lnBox.Name = "lnBox";
+            this.lnBox.Size = new System.Drawing.Size(367, 38);
+            this.lnBox.TabIndex = 9;
+            // 
+            // lastNameLabel
+            // 
+            this.lastNameLabel.AutoSize = true;
+            this.lastNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.lastNameLabel.ForeColor = System.Drawing.Color.Wheat;
+            this.lastNameLabel.Location = new System.Drawing.Point(27, 132);
+            this.lastNameLabel.Name = "lastNameLabel";
+            this.lastNameLabel.Size = new System.Drawing.Size(151, 32);
+            this.lastNameLabel.TabIndex = 8;
+            this.lastNameLabel.Text = "Last Name";
             // 
             // dnLink
             // 
@@ -71,7 +93,7 @@ namespace WinformForProject
             // 
             // mkBox
             // 
-            this.mkBox.Location = new System.Drawing.Point(182, 159);
+            this.mkBox.Location = new System.Drawing.Point(199, 223);
             this.mkBox.Name = "mkBox";
             this.mkBox.PasswordChar = '*';
             this.mkBox.Size = new System.Drawing.Size(367, 38);
@@ -80,7 +102,7 @@ namespace WinformForProject
             // dkButton
             // 
             this.dkButton.BackColor = System.Drawing.Color.Transparent;
-            this.dkButton.Location = new System.Drawing.Point(208, 268);
+            this.dkButton.Location = new System.Drawing.Point(199, 278);
             this.dkButton.Name = "dkButton";
             this.dkButton.Size = new System.Drawing.Size(232, 80);
             this.dkButton.TabIndex = 5;
@@ -90,7 +112,7 @@ namespace WinformForProject
             // 
             // tkBox
             // 
-            this.tkBox.Location = new System.Drawing.Point(182, 40);
+            this.tkBox.Location = new System.Drawing.Point(199, 40);
             this.tkBox.Name = "tkBox";
             this.tkBox.Size = new System.Drawing.Size(367, 38);
             this.tkBox.TabIndex = 2;
@@ -100,7 +122,7 @@ namespace WinformForProject
             this.mkLabel.AutoSize = true;
             this.mkLabel.BackColor = System.Drawing.Color.Transparent;
             this.mkLabel.ForeColor = System.Drawing.Color.Wheat;
-            this.mkLabel.Location = new System.Drawing.Point(27, 162);
+            this.mkLabel.Location = new System.Drawing.Point(27, 226);
             this.mkLabel.Name = "mkLabel";
             this.mkLabel.Size = new System.Drawing.Size(131, 32);
             this.mkLabel.TabIndex = 1;
@@ -114,9 +136,9 @@ namespace WinformForProject
             this.tkLabel.ForeColor = System.Drawing.Color.Olive;
             this.tkLabel.Location = new System.Drawing.Point(27, 40);
             this.tkLabel.Name = "tkLabel";
-            this.tkLabel.Size = new System.Drawing.Size(149, 32);
+            this.tkLabel.Size = new System.Drawing.Size(162, 32);
             this.tkLabel.TabIndex = 0;
-            this.tkLabel.Text = "Tài khoản";
+            this.tkLabel.Text = "First Name";
             // 
             // FormDK
             // 
@@ -125,6 +147,7 @@ namespace WinformForProject
             this.ClientSize = new System.Drawing.Size(626, 422);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormDK";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDK";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -141,5 +164,7 @@ namespace WinformForProject
         private System.Windows.Forms.Button dkButton;
         private System.Windows.Forms.LinkLabel dnLink;
         private System.Windows.Forms.TextBox mkBox;
+        private System.Windows.Forms.TextBox lnBox;
+        private System.Windows.Forms.Label lastNameLabel;
     }
 }

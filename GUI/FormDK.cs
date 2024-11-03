@@ -30,10 +30,19 @@ namespace WinformForProject
 
         private void dkButton_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrEmpty(tkBox.Text) || string.IsNullOrEmpty(mkBox.Text) || string.IsNullOrEmpty(lnBox.Text))
+            {
+                MessageBox.Show("Nhập đầy đủ thông tin");
+                return;
+            }
             string username = tkBox.Text;
             string password = mkBox.Text;
-            bus.Signup(username, password);
-            
+            string lastname = lnBox.Text;
+            if (bus.Signup(username, password, lastname))
+            {
+                MessageBox.Show("Đăng ký thành công");
+            }
+            else MessageBox.Show("Đăng ký không thành");
         }
     }
 }

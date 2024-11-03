@@ -139,6 +139,7 @@ namespace DangNhap
             this.ClientSize = new System.Drawing.Size(633, 428);
             this.Controls.Add(this.groupBox1);
             this.Name = "dnForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
