@@ -11,8 +11,8 @@ namespace Database.DAL
 {
     public class DatabaseAccess
     {
-        private string connectionString = "Server=localhost ;Database=login ;User Id=root;Password=; Port=3306";
-        public static string HashPassword(string password)
+        private string connectionString = "Server=localhost ;Database=xisap ;User Id=root;Password=69215847; Port=3306";
+        /*public static string HashPassword(string password)
         {
             using (SHA256 sha256Hash = SHA256.Create())
             {
@@ -26,16 +26,16 @@ namespace Database.DAL
 
                 return builder.ToString();
             }
-        }
+        }*/
         public bool CheckLogin(string username, string password)
         {
-            string hashedInputPassword = HashPassword(password);
+            //string hashedInputPassword = HashPassword(password);
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    string query = "SELECT matkhau FROM user WHERE taikhoan=@Username";
+                    string query = "SELECT PersonID FROM person WHERE FirstName=@Username";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Username", username);
@@ -47,9 +47,21 @@ namespace Database.DAL
                     {
                         if (reader.Read())
                         {
-                            string storedHashedPassword = reader.GetString("matkhau");
-                            return hashedInputPassword == storedHashedPassword;
+                            int personID = reader.GetInt32("PersonID");
+                            reader.Close();
+                            query = "SELECT PasswordHash FROM password WHERE PersonID = " + personID;
+                            cmd = new MySqlCommand(query, conn);
+                            using (MySqlDataReader reader1 = cmd.ExecuteReader())
+                            {
+                                if (reader1.Read())
+                                {
+                                    string storedHashedPassword = reader1.GetString("PasswordHash");
+                                    return password == storedHashedPassword;
+                                }
+
+                            }
                         }
+                        else return false;
                     }
                     return false;
                     /*object result = cmd.ExecuteScalar();
@@ -69,28 +81,51 @@ namespace Database.DAL
                 }
             }
         }
-        public void signupUser(string username, string password)
+        public bool signupUser(string username, string password, string lastname)
         {
-            string hashedPassword = HashPassword(password);
+            //string hashedPassword = HashPassword(password);
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    string query = "INSERT INTO user (taikhoan, matkhau) VALUES (@username, @password)";
+        
+                    
+                        string query = "INSERT INTO person (PersonType, FirstName, LastName, ModifiedDate) VALUES (@PersonType, @FirstName,@LastName,@Date)";
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    
+                        //cmd.Parameters.AddWithValue("@PersonID", ID);
+                        cmd.Parameters.AddWithValue("@PersonType", "Emp");
+                        cmd.Parameters.AddWithValue("@FirstName", username);
+                        cmd.Parameters.AddWithValue("@LastName", lastname);
+                        cmd.Parameters.AddWithValue("Date", DateTime.Now);
+                        cmd.ExecuteNonQuery();
+                    
+                    string sql = "SELECT MAX(PersonID) AS LastID FROM person";
+                    int ID = 1;
+                    cmd = new MySqlCommand(sql, conn);
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        cmd.Parameters.AddWithValue("@username", username);
-                        cmd.Parameters.AddWithValue("@password", hashedPassword);
+                        if (reader.Read())
+                            ID = reader.GetInt32("LastID");
+                        reader.Close();
+                    }
+                    query = "INSERT INTO password (PersonID, PasswordHash,ModifiedDate) VALUES (@PersonID, @PasswordHash, @Date)";
+                    using(cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@PersonID", ID);
+                        cmd.Parameters.AddWithValue("@PasswordHash", password);
+                        cmd.Parameters.AddWithValue("Date", DateTime.Now);
                         cmd.ExecuteNonQuery();
                     }
-
                     Console.WriteLine("Password stored successfully!");
+                    return true;
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Error: {ex.Message}");
+                    throw new Exception( ex.Message);
                 }
             }
         }
