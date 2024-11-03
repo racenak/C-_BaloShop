@@ -11,7 +11,7 @@ namespace Database.DAL
 {
     public class DatabaseAccess
     {
-        private string connectionString = "Server=localhost ;Database=xisap ;User Id=root;Password=69215847; Port=3306";
+        private string connectionString = "Server=localhost ;Database=xisap ;User Id=root;Password=; Port=3306";
         /*public static string HashPassword(string password)
         {
             using (SHA256 sha256Hash = SHA256.Create())
