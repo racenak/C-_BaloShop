@@ -11,9 +11,9 @@ namespace DangKy.BUS
     {
         private DatabaseAccess dal = new DatabaseAccess();
 
-        public void Signup(string username, string password)
+        public bool Signup(string username, string password, string lastname)
         {
-            dal.signupUser(username, password);
+            return dal.signupUser(username, password, lastname);
         }
     }
 }
