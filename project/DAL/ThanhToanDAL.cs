@@ -45,5 +45,60 @@ namespace DAL
 
             return products;
         }
+       
+         
+
+            // Phương thức lấy danh sách màu sắc
+            public List<string> GetAllColors()
+            {
+                List<string> colors = new List<string>();
+
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT DISTINCT Color FROM Product"; // Lấy danh sách màu sắc duy nhất
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                // Thêm màu sắc vào danh sách
+                                colors.Add(reader.GetString("Color"));
+                            }
+                        }
+                    }
+                }
+
+                return colors;
+            }
+
+            // Phương thức lấy danh sách hãng
+            public List<string> GetAllBrands()
+            {
+                List<string> brands = new List<string>();
+
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT DISTINCT ProductSubCategory FROM Product"; // Lấy danh sách hãng duy nhất
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                // Thêm hãng vào danh sách
+                                brands.Add(reader.GetString("ProductSubCategory"));
+                            }
+                        }
+                    }
+                }
+
+                return brands;
+            }
+        }
     }
-}
+

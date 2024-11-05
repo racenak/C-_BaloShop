@@ -1,27 +1,31 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\FormThanhToan\\",
+  "WorkspaceRootPath": "C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\FormThanhToan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C9BBC5E8-F563-436B-93B5-25FF2DDC3E48}|..\\DAL\\DAL.csproj|c:\\users\\quocd\\onedrive\\desktop\\c-_baloshop\\project\\dal\\thanhtoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8255E71-0670-4F52-B793-040E55C6962A}|..\\BLL\\BLL.csproj|c:\\users\\quocd\\onedrive\\desktop\\new\\c-_baloshop\\project\\bll\\thanhtoanbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8255E71-0670-4F52-B793-040E55C6962A}|..\\BLL\\BLL.csproj|C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\BLL\\ThanhToanBLL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{307AD52A-5221-462D-B596-06D7BA168243}|FormThanhToan.csproj|C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\FormThanhToan\\FormThanhToan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{307AD52A-5221-462D-B596-06D7BA168243}|FormThanhToan.csproj|solutionrelative:FormThanhToan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{307AD52A-5221-462D-B596-06D7BA168243}|FormThanhToan.csproj|C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\FormThanhToan\\formthanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{307AD52A-5221-462D-B596-06D7BA168243}|FormThanhToan.csproj|C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\FormThanhToan\\formthanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{307AD52A-5221-462D-B596-06D7BA168243}|FormThanhToan.csproj|solutionrelative:formthanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{307AD52A-5221-462D-B596-06D7BA168243}|FormThanhToan.csproj|C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\FormThanhToan\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{307AD52A-5221-462D-B596-06D7BA168243}|FormThanhToan.csproj|C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\FormThanhToan\\formthanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{307AD52A-5221-462D-B596-06D7BA168243}|FormThanhToan.csproj|solutionrelative:formthanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9BBC5E8-F563-436B-93B5-25FF2DDC3E48}|..\\DAL\\DAL.csproj|c:\\users\\quocd\\onedrive\\desktop\\new\\c-_baloshop\\project\\dal\\thanhtoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{307AD52A-5221-462D-B596-06D7BA168243}|FormThanhToan.csproj|c:\\users\\quocd\\onedrive\\desktop\\new\\c-_baloshop\\project\\formthanhtoan\\formthanhtoan.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{307AD52A-5221-462D-B596-06D7BA168243}|FormThanhToan.csproj|solutionrelative:formthanhtoan.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{307AD52A-5221-462D-B596-06D7BA168243}|FormThanhToan.csproj|C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\FormThanhToan\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{307AD52A-5221-462D-B596-06D7BA168243}|FormThanhToan.csproj|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{380C1A80-8CFB-4B86-BAD6-7D6263855B33}|..\\DTO\\DTO.csproj|C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\DTO\\Product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{380C1A80-8CFB-4B86-BAD6-7D6263855B33}|..\\DTO\\DTO.csproj|c:\\users\\quocd\\onedrive\\desktop\\new\\c-_baloshop\\project\\dto\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +38,92 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormThanhToan.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\FormThanhToan\\FormThanhToan.Designer.cs",
+              "RelativeDocumentMoniker": "FormThanhToan.Designer.cs",
+              "ToolTip": "C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\FormThanhToan\\FormThanhToan.Designer.cs",
+              "RelativeToolTip": "FormThanhToan.Designer.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAlwIoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T03:54:26.912Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ThanhToanDAL.cs",
-              "DocumentMoniker": "C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\DAL\\ThanhToanDAL.cs",
-              "RelativeDocumentMoniker": "..\\DAL\\ThanhToanDAL.cs",
-              "ToolTip": "C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\DAL\\ThanhToanDAL.cs",
-              "RelativeToolTip": "..\\DAL\\ThanhToanDAL.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAywCYAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T06:47:39.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\FormThanhToan\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\FormThanhToan\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T02:52:31.86Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "ThanhToanBLL.cs",
-              "DocumentMoniker": "C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\BLL\\ThanhToanBLL.cs",
+              "DocumentMoniker": "C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\BLL\\ThanhToanBLL.cs",
               "RelativeDocumentMoniker": "..\\BLL\\ThanhToanBLL.cs",
-              "ToolTip": "C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\BLL\\ThanhToanBLL.cs",
-              "RelativeToolTip": "..\\BLL\\ThanhToanBLL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAKAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\BLL\\ThanhToanBLL.cs*",
+              "RelativeToolTip": "..\\BLL\\ThanhToanBLL.cs*",
+              "ViewState": "AgIAACcAAAAAAAAAAAAgwD8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T06:47:23.923Z",
+              "WhenOpened": "2024-11-04T04:57:15.775Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "FormThanhToan.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\FormThanhToan\\FormThanhToan.cs",
-              "RelativeDocumentMoniker": "FormThanhToan.cs",
-              "ToolTip": "C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\FormThanhToan\\FormThanhToan.cs [Design]",
-              "RelativeToolTip": "FormThanhToan.cs [Design]",
+              "Title": "ThanhToanDAL.cs",
+              "DocumentMoniker": "C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\DAL\\ThanhToanDAL.cs",
+              "RelativeDocumentMoniker": "..\\DAL\\ThanhToanDAL.cs",
+              "ToolTip": "C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\DAL\\ThanhToanDAL.cs",
+              "RelativeToolTip": "..\\DAL\\ThanhToanDAL.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAgwB0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T05:08:31.199Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-04T04:45:41.865Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "FormThanhToan.cs",
-              "DocumentMoniker": "C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\FormThanhToan\\FormThanhToan.cs",
+              "DocumentMoniker": "C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\FormThanhToan\\FormThanhToan.cs",
               "RelativeDocumentMoniker": "FormThanhToan.cs",
-              "ToolTip": "C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\FormThanhToan\\FormThanhToan.cs",
+              "ToolTip": "C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\FormThanhToan\\FormThanhToan.cs",
               "RelativeToolTip": "FormThanhToan.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAtwDMAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T06:28:01.815Z",
+              "WhenOpened": "2024-11-04T04:47:44.297Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\DTO\\Product.cs",
-              "RelativeDocumentMoniker": "..\\DTO\\Product.cs",
-              "ToolTip": "C:\\Users\\quocd\\OneDrive\\Desktop\\C-_BaloShop\\project\\DTO\\Product.cs",
-              "RelativeToolTip": "..\\DTO\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAxAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "FormThanhToan.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\FormThanhToan\\FormThanhToan.cs",
+              "RelativeDocumentMoniker": "FormThanhToan.cs",
+              "ToolTip": "C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\FormThanhToan\\FormThanhToan.cs [Design]",
+              "RelativeToolTip": "FormThanhToan.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T06:48:04.423Z",
+              "WhenOpened": "2024-11-04T04:46:12.593Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\DTO\\Product.cs",
+              "RelativeDocumentMoniker": "..\\DTO\\Product.cs",
+              "ToolTip": "C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\DTO\\Product.cs",
+              "RelativeToolTip": "..\\DTO\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T04:45:35.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\FormThanhToan\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\quocd\\OneDrive\\Desktop\\new\\C-_BaloShop\\project\\FormThanhToan\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T02:52:31.86Z",
               "EditorCaption": ""
             }
           ]

@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
-using DAL;
+
 using System.Data;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 namespace BLL
 
 {
@@ -15,6 +16,7 @@ namespace BLL
 
     {
         private ThanhToanDAL thanhToanDAL = new ThanhToanDAL();
+
 
         public List<Product> GetAllProducts()
         {
@@ -48,6 +50,18 @@ namespace BLL
 
             return dataTable;
         }
+        public List<string> GetAllColors()
+        {
+           
+            return thanhToanDAL.GetAllColors() ; // Gọi phương thức từ DAL
+        }
+
+        // Phương thức lấy danh sách hãng
+        public List<string> GetAllBrands()
+        {
+            return thanhToanDAL.GetAllBrands(); // Gọi phương thức từ DAL
+        }
+
 
     }
 }
