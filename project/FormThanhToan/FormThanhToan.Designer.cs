@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.labelcolor = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
@@ -60,6 +62,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -84,8 +87,11 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.splitContainer1.Panel2.Controls.Add(this.button5);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
+            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(1363, 779);
             this.splitContainer1.SplitterDistance = 757;
             this.splitContainer1.TabIndex = 0;
@@ -93,10 +99,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.comboBox3);
             this.panel2.Controls.Add(this.label4);
@@ -109,6 +115,13 @@
             this.panel2.Size = new System.Drawing.Size(757, 779);
             this.panel2.TabIndex = 11;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(246, 76);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(208, 22);
+            this.textBox1.TabIndex = 27;
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.dataGridView2);
@@ -119,6 +132,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.SpringGreen;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(-1, 0);
             this.dataGridView2.Name = "dataGridView2";
@@ -153,16 +167,7 @@
             this.button4.TabIndex = 24;
             this.button4.Text = "Tìm";
             this.button4.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Font = new System.Drawing.Font("Vivaldi", 8.25F);
-            this.panel3.Location = new System.Drawing.Point(250, 73);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(207, 26);
-            this.panel3.TabIndex = 23;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label5
             // 
@@ -230,8 +235,21 @@
             this.comboBox1.TabIndex = 16;
             this.comboBox1.Text = "Tất cả";
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Goldenrod;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(193, 622);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(192, 70);
+            this.button5.TabIndex = 15;
+            this.button5.Text = "Làm Mới";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.SpringGreen;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(-8, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
@@ -242,6 +260,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label14);
@@ -460,6 +479,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tổng tiền :";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // FormThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -494,7 +519,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label4;
@@ -520,6 +544,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 

@@ -94,5 +94,71 @@ namespace FormThanhToan
                 selectedProductsTable.Rows.Add(newRow);
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length > 0) {
+                string productName = textBox1.Text.Trim();
+
+                // Gọi phương thức tìm kiếm theo tên sản phẩm từ BLL
+                List<Product> searchResults = thanhtoanbll.SearchProductsByName(productName);
+
+                // Hiển thị kết quả lên DataGridView
+                dataGridView2.DataSource = searchResults;
+            }
+            else
+            {
+                string brand = comboBox3.SelectedItem?.ToString();
+                string color = comboBox1.SelectedItem?.ToString();
+
+                // Thiết lập minPrice và maxPrice từ lựa chọn trong ComboBox
+                decimal? minPrice = null;
+                decimal? maxPrice = null;
+
+                switch (comboBox2.SelectedItem?.ToString())
+                {
+                    case "Dưới 100,000":
+                        maxPrice = 100000;
+                        break;
+                    case "100,000 - 200,000":
+                        minPrice = 100000;
+                        maxPrice = 200000;
+                        break;
+                    case "200,000 - 500,000":
+                        minPrice = 200000;
+                        maxPrice = 500000;
+                        break;
+                    case "Trên 500,000":
+                        minPrice = 500000;
+                        break;
+                }
+
+                // Gọi phương thức SearchProducts từ BLL
+                List<Product> searchResults = thanhtoanbll.SearchProducts(brand, color, minPrice, maxPrice);
+
+                // Hiển thị kết quả lên DataGridView
+                dataGridView2.DataSource = searchResults;
+
+                // Gọi phương thức SearchProducts từ BLL
+
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LoadData();
+            InitializeSelectedProductsTable(); // Khởi tạo bảng sản phẩm đã chọn
+            LoadComboBoxData();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
