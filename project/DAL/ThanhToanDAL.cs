@@ -26,20 +26,7 @@ namespace DAL
 
                 while (reader.Read())
                 {
-                    Product product = new Product
-                    {
-                        ProductID = reader.GetInt32(0),
-                        Name = reader.GetString(1),
-                        ProductNumber = reader.GetString(2),
-                        Color = reader.GetString(3),
-                        Size = reader.GetString(4),
-                        Weight = reader.GetDecimal(5),
-                        StandardCost = reader.GetDecimal(6),
-                        ListPrice = reader.GetDecimal(7),
-                        SafetyStockLevel = reader.GetInt32(8),
-                        ProductSubCategory = reader.GetString(9)
-                    };
-                    products.Add(product);
+                    products.Add(MapProduct(reader));
                 }
             }
 
@@ -118,6 +105,7 @@ namespace DAL
                     sql += " AND ListPrice >= @MinPrice";
                 if (maxPrice.HasValue)
                     sql += " AND ListPrice <= @MaxPrice";
+   
 
                 using (MySqlCommand command = new MySqlCommand(sql, connection))
                 {
@@ -134,20 +122,7 @@ namespace DAL
                     {
                         while (reader.Read())
                         {
-                            var product = new Product
-                            {
-                                ProductID = reader.GetInt32("ProductID"),
-                                Name = reader.GetString("Name"),
-                                ProductNumber = reader.GetString("ProductNumber"),
-                                Color = reader.IsDBNull(reader.GetOrdinal("Color")) ? null : reader.GetString("Color"),
-                                Size = reader.IsDBNull(reader.GetOrdinal("Size")) ? null : reader.GetString("Size"),
-                                Weight = reader.IsDBNull(reader.GetOrdinal("Weight")) ? 0 : reader.GetDecimal("Weight"),
-                                StandardCost = reader.IsDBNull(reader.GetOrdinal("StandardCost")) ? 0 : reader.GetDecimal("StandardCost"),
-                                ListPrice = reader.IsDBNull(reader.GetOrdinal("ListPrice")) ? 0 : reader.GetDecimal("ListPrice"),
-                                SafetyStockLevel = reader.GetInt32("SafetyStockLevel"),
-                                ProductSubCategory = reader.GetString("ProductSubCategory")
-                            };
-                            products.Add(product);
+                            products.Add(MapProduct(reader));
                         }
                     }
                 }
@@ -155,6 +130,48 @@ namespace DAL
 
             return products;
         }
+
+        // Helper function to map data from reader to ProductDTO
+        private Product MapProduct(MySqlDataReader reader)
+        {
+            var product = new Product();
+
+            product.ProductID = reader.GetInt32("ProductID");
+            product.Name = reader.GetString("Name");
+            product.ProductNumber = reader.GetString("ProductNumber");
+
+            if (reader.IsDBNull(reader.GetOrdinal("Color")))
+                product.Color = null;
+            else
+                product.Color = reader.GetString("Color");
+
+            if (reader.IsDBNull(reader.GetOrdinal("Size")))
+                product.Size = null;
+            else
+                product.Size = reader.GetString("Size");
+
+            if (reader.IsDBNull(reader.GetOrdinal("Weight")))
+                product.Weight = 0;
+            else
+                product.Weight = reader.GetDecimal("Weight");
+
+            if (reader.IsDBNull(reader.GetOrdinal("StandardCost")))
+                product.StandardCost = 0;
+            else
+                product.StandardCost = reader.GetDecimal("StandardCost");
+
+            if (reader.IsDBNull(reader.GetOrdinal("ListPrice")))
+                product.ListPrice = 0;
+            else
+                product.ListPrice = reader.GetDecimal("ListPrice");
+
+            product.SafetyStockLevel = reader.GetInt32("SafetyStockLevel");
+            product.ProductSubCategory = reader.GetString("ProductSubCategory");
+
+            return product;
+        }
+
+
         public List<Product> SearchProductsByName(string productName)
         {
             var products = new List<Product>();
@@ -174,20 +191,7 @@ namespace DAL
                     {
                         while (reader.Read())
                         {
-                            var product = new Product
-                            {
-                                ProductID = reader.GetInt32("ProductID"),
-                                Name = reader.GetString("Name"),
-                                ProductNumber = reader.GetString("ProductNumber"),
-                                Color = reader.IsDBNull(reader.GetOrdinal("Color")) ? null : reader.GetString("Color"),
-                                Size = reader.IsDBNull(reader.GetOrdinal("Size")) ? null : reader.GetString("Size"),
-                                Weight = reader.IsDBNull(reader.GetOrdinal("Weight")) ? 0 : reader.GetDecimal("Weight"),
-                                StandardCost = reader.IsDBNull(reader.GetOrdinal("StandardCost")) ? 0 : reader.GetDecimal("StandardCost"),
-                                ListPrice = reader.IsDBNull(reader.GetOrdinal("ListPrice")) ? 0 : reader.GetDecimal("ListPrice"),
-                                SafetyStockLevel = reader.GetInt32("SafetyStockLevel"),
-                                ProductSubCategory = reader.GetString("ProductSubCategory")
-                            };
-                            products.Add(product);
+                            products.Add(MapProduct(reader));
                         }
                     }
                 }

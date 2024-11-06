@@ -206,6 +206,8 @@
             // 
             this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "null"});
             this.comboBox2.Location = new System.Drawing.Point(412, 7);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
@@ -234,6 +236,7 @@
             this.comboBox1.Size = new System.Drawing.Size(99, 24);
             this.comboBox1.TabIndex = 16;
             this.comboBox1.Text = "Tất cả";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button5
             // 
@@ -442,6 +445,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "HỦY ĐƠN";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 

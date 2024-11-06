@@ -62,12 +62,15 @@ namespace BLL
             return thanhToanDAL.GetAllBrands(); // Gọi phương thức từ DAL
         }
 
-       
+
 
         public List<Product> SearchProducts(string brand, string color, decimal? minPrice, decimal? maxPrice)
         {
             return thanhToanDAL.SearchProducts(brand, color, minPrice, maxPrice);
         }
+
+
+
         public List<Product> SearchProductsByName(string productName) { 
             return thanhToanDAL.SearchProductsByName(productName);
         }

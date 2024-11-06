@@ -36,9 +36,14 @@ namespace FormThanhToan
             List<string> brands = thanhtoanbll.GetAllBrands(); // Lấy danh sách hãng
             List<string> priceRanges = new List<string> { "Dưới 100", "100-500", "Trên 500" }; // Các khoảng giá
 
+            colors.Insert(0, "Tất cả");
+            brands.Insert(0, "Tất cả");
+            priceRanges.Insert(0, "Tất cả");
+
+            // Gán DataSource cho ComboBox
             comboBox1.DataSource = colors;
-            comboBox3.DataSource = brands;
             comboBox2.DataSource = priceRanges;
+            comboBox3.DataSource = brands; ;
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -108,38 +113,37 @@ namespace FormThanhToan
             }
             else
             {
-                string brand = comboBox3.SelectedItem?.ToString();
-                string color = comboBox1.SelectedItem?.ToString();
-
-                // Thiết lập minPrice và maxPrice từ lựa chọn trong ComboBox
+                string selectedColor = comboBox1.SelectedItem?.ToString() == "Tất cả" ? null : comboBox1.SelectedItem?.ToString();
+                string selectedBrand = comboBox3.SelectedItem?.ToString() == "Tất cả" ? null : comboBox3.SelectedItem?.ToString();
                 decimal? minPrice = null;
                 decimal? maxPrice = null;
 
-                switch (comboBox2.SelectedItem?.ToString())
+                // Xử lý khoảng giá từ ComboBox
+                if (comboBox2.SelectedItem?.ToString() != "Tất cả")
                 {
-                    case "Dưới 100,000":
-                        maxPrice = 100000;
-                        break;
-                    case "100,000 - 200,000":
-                        minPrice = 100000;
-                        maxPrice = 200000;
-                        break;
-                    case "200,000 - 500,000":
-                        minPrice = 200000;
-                        maxPrice = 500000;
-                        break;
-                    case "Trên 500,000":
-                        minPrice = 500000;
-                        break;
+                    string selectedPriceRange = comboBox2.SelectedItem.ToString();
+                    switch (selectedPriceRange)
+                    {
+                        case "Dưới 100":
+                            maxPrice = 100000;
+                            break;
+                        case "100-500":
+                            minPrice = 100000;
+                            maxPrice = 500000;
+                            break;
+                        case "Trên 500":
+                            minPrice = 500000;
+                            break;
+                    }
                 }
 
-                // Gọi phương thức SearchProducts từ BLL
-                List<Product> searchResults = thanhtoanbll.SearchProducts(brand, color, minPrice, maxPrice);
+
+
+                // Gọi phương thức tìm kiếm từ BLL
+                var results = thanhtoanbll.SearchProducts(selectedBrand, selectedColor, minPrice, maxPrice);
 
                 // Hiển thị kết quả lên DataGridView
-                dataGridView2.DataSource = searchResults;
-
-                // Gọi phương thức SearchProducts từ BLL
+                dataGridView2.DataSource = results;
 
             }
         }
@@ -147,7 +151,7 @@ namespace FormThanhToan
         private void button5_Click(object sender, EventArgs e)
         {
             LoadData();
-            InitializeSelectedProductsTable(); // Khởi tạo bảng sản phẩm đã chọn
+          
             LoadComboBoxData();
         }
 
@@ -157,6 +161,16 @@ namespace FormThanhToan
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            InitializeSelectedProductsTable();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
