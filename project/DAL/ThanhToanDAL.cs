@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
+﻿using DTO;
 using MySql.Data.MySqlClient;
-using System.Data.SqlTypes;
+using System.Collections.Generic;
 
 namespace DAL
 {
     public class ThanhToanDAL
     {
-        private string connectionString = "Server=localhost;Database=baloshop;Uid=root;Pwd=;Port=3306;"; // Thay đổi thông tin kết nối phù hợp
+        private string connectionString = "Server=localhost;Port=3307;Database=baloshop1;User ID=root;Password=01262501031Aa;"; // Thay đổi thông tin kết nối phù hợp
 
         public List<Product> GetAllProducts()
         {
@@ -21,12 +15,13 @@ namespace DAL
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-                MySqlCommand command = new MySqlCommand("SELECT ProductID, Name, ProductNumber, Color, Size, Weight, StandardCost, ListPrice, SafetyStockLevel, ProductSubCategory FROM Product", connection);
-                MySqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
+                MySqlCommand command = new MySqlCommand("SELECT ProductID, Name, Color, Size, StandardCost, ListPrice, SafetyStockLevel, ProductSubCategoryID FROM Product", connection);
+                using (MySqlDataReader reader = command.ExecuteReader())
                 {
-                    products.Add(MapProduct(reader));
+                    while (reader.Read())
+                    {
+                        products.Add(MapProduct(reader));
+                    }
                 }
             }
 
@@ -62,14 +57,14 @@ namespace DAL
         }
 
         // Phương thức lấy danh sách hãng
-        public List<string> GetAllBrands()
+        public List<int> GetAllBrands()
         {
-            List<string> brands = new List<string>();
+            List<int> brands = new List<int>();
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT DISTINCT ProductSubCategory FROM Product"; // Lấy danh sách hãng duy nhất
+                string query = "SELECT DISTINCT ProductSubCategoryID FROM Product"; // Lấy danh sách hãng duy nhất
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
@@ -78,7 +73,7 @@ namespace DAL
                         while (reader.Read())
                         {
                             // Thêm hãng vào danh sách
-                            brands.Add(reader.GetString("ProductSubCategory"));
+                            brands.Add(reader.GetInt32("ProductSubCategoryID"));
                         }
                     }
                 }
@@ -98,14 +93,14 @@ namespace DAL
                 string sql = "SELECT * FROM Product WHERE 1=1";
 
                 if (!string.IsNullOrEmpty(brand))
-                    sql += " AND ProductSubCategory = @Brand";
+                    sql += " AND ProductSubCategoryID = @Brand";
                 if (!string.IsNullOrEmpty(color))
                     sql += " AND Color = @Color";
                 if (minPrice.HasValue)
                     sql += " AND ListPrice >= @MinPrice";
                 if (maxPrice.HasValue)
                     sql += " AND ListPrice <= @MaxPrice";
-   
+
 
                 using (MySqlCommand command = new MySqlCommand(sql, connection))
                 {
@@ -138,7 +133,6 @@ namespace DAL
 
             product.ProductID = reader.GetInt32("ProductID");
             product.Name = reader.GetString("Name");
-            product.ProductNumber = reader.GetString("ProductNumber");
 
             if (reader.IsDBNull(reader.GetOrdinal("Color")))
                 product.Color = null;
@@ -150,10 +144,7 @@ namespace DAL
             else
                 product.Size = reader.GetString("Size");
 
-            if (reader.IsDBNull(reader.GetOrdinal("Weight")))
-                product.Weight = 0;
-            else
-                product.Weight = reader.GetDecimal("Weight");
+
 
             if (reader.IsDBNull(reader.GetOrdinal("StandardCost")))
                 product.StandardCost = 0;
@@ -166,7 +157,7 @@ namespace DAL
                 product.ListPrice = reader.GetDecimal("ListPrice");
 
             product.SafetyStockLevel = reader.GetInt32("SafetyStockLevel");
-            product.ProductSubCategory = reader.GetString("ProductSubCategory");
+            product.ProductSubCategoryID = reader.GetInt32("ProductSubCategoryID");
 
             return product;
         }

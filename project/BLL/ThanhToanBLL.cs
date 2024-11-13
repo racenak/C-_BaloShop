@@ -57,7 +57,7 @@ namespace BLL
         }
 
         // Phương thức lấy danh sách hãng
-        public List<string> GetAllBrands()
+        public List<int> GetAllBrands()
         {
             return thanhToanDAL.GetAllBrands(); // Gọi phương thức từ DAL
         }
@@ -73,6 +73,20 @@ namespace BLL
 
         public List<Product> SearchProductsByName(string productName) { 
             return thanhToanDAL.SearchProductsByName(productName);
+        }
+        public decimal CalculateTotalPrice(List<Product> selectedProducts)
+        {
+            decimal totalPrice = 0;
+            foreach (var product in selectedProducts)
+            {
+                totalPrice += product.ListPrice;
+            }
+            return totalPrice;
+        }
+
+        public int CountTotalProducts(List<Product> selectedProducts)
+        {
+            return selectedProducts.Count;
         }
 
     }
