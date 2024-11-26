@@ -16,7 +16,7 @@ namespace FormThanhToan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormThanhToan());
+            Application.Run(new FormGiamGia());
         }
     }
 }

@@ -104,10 +104,8 @@ namespace FormThanhToan
                 DataRow newRow = selectedProductsTable.NewRow();
                 newRow["ProductID"] = selectedProduct.ProductID;
                 newRow["Name"] = selectedProduct.Name;
-              
                 newRow["Color"] = selectedProduct.Color;
                 newRow["Size"] = selectedProduct.Size;
-             
                 newRow["StandardCost"] = selectedProduct.StandardCost;
                 newRow["ListPrice"] = selectedProduct.ListPrice;
                 newRow["SafetyStockLevel"] = selectedProduct.SafetyStockLevel;

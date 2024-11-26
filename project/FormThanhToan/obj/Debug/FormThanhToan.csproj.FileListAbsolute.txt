@@ -120,3 +120,4 @@ C:\Users\quocd\OneDrive\Desktop\new\C-_BaloShop\project\FormThanhToan\obj\Debug\
 C:\Users\quocd\OneDrive\Desktop\new\C-_BaloShop\project\FormThanhToan\obj\Debug\FormThan.3FC1E6F9.Up2Date
 C:\Users\quocd\OneDrive\Desktop\new\C-_BaloShop\project\FormThanhToan\obj\Debug\FormThanhToan.exe
 C:\Users\quocd\OneDrive\Desktop\new\C-_BaloShop\project\FormThanhToan\obj\Debug\FormThanhToan.pdb
+C:\Users\quocd\OneDrive\Desktop\new\C-_BaloShop\project\FormThanhToan\obj\Debug\FormThanhToan.FormGiamGia.resources

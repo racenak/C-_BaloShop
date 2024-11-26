@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormGiamGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGiamGia.Designer.cs">
+      <DependentUpon>FormGiamGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormGiamGia.resx">
+      <DependentUpon>FormGiamGia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormThanhToan.resx">
       <DependentUpon>FormThanhToan.cs</DependentUpon>
     </EmbeddedResource>
