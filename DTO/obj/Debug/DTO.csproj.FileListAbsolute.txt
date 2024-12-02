@@ -1,0 +1,7 @@
+C:\Users\HP\source\repos\BaloNe\DTO\bin\Debug\DTO.exe.config
+C:\Users\HP\source\repos\BaloNe\DTO\bin\Debug\DTO.exe
+C:\Users\HP\source\repos\BaloNe\DTO\bin\Debug\DTO.pdb
+C:\Users\HP\source\repos\BaloNe\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\BaloNe\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\BaloNe\DTO\obj\Debug\DTO.exe
+C:\Users\HP\source\repos\BaloNe\DTO\obj\Debug\DTO.pdb

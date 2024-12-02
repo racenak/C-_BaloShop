@@ -1,0 +1,9 @@
+C:\Users\HP\source\repos\BaloNe\BaloNe\bin\Debug\BaloNe.exe.config
+C:\Users\HP\source\repos\BaloNe\BaloNe\bin\Debug\BaloNe.exe
+C:\Users\HP\source\repos\BaloNe\BaloNe\bin\Debug\BaloNe.pdb
+C:\Users\HP\source\repos\BaloNe\BaloNe\obj\Debug\BaloNe.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\BaloNe\BaloNe\obj\Debug\BaloNe.Properties.Resources.resources
+C:\Users\HP\source\repos\BaloNe\BaloNe\obj\Debug\BaloNe.csproj.GenerateResource.cache
+C:\Users\HP\source\repos\BaloNe\BaloNe\obj\Debug\BaloNe.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\BaloNe\BaloNe\obj\Debug\BaloNe.exe
+C:\Users\HP\source\repos\BaloNe\BaloNe\obj\Debug\BaloNe.pdb
